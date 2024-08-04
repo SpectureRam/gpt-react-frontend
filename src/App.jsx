@@ -8,14 +8,14 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true);  // Set loading to true when the request starts
+    setLoading(true);
     try {
       const result = await axios.post('https://gpt-flask-backend.onrender.com/api/chat', { question });
       setResponse(result.data.response);
     } catch (error) {
       console.error('Error fetching response:', error);
     } finally {
-      setLoading(false);  // Set loading to false after the request finishes
+      setLoading(false);
     }
   };
 
